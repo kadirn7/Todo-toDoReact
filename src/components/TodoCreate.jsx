@@ -4,6 +4,9 @@ import '../App.css';
 function TodoCreate({ onCreateTodo }) {
     const[newTodo,setNewTodo] = useState('');
     
+    const clearInput=()=>{
+        setNewTodo('');
+    }
     const createTodo=()=>{
         if(!newTodo) return;
         const request = {
@@ -11,7 +14,7 @@ function TodoCreate({ onCreateTodo }) {
             content:newTodo
         }
         onCreateTodo(request);
-        
+        clearInput();
     }
     return (
         <div className='todo-create'>
