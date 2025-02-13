@@ -10,7 +10,7 @@ function App() {
  
 
   const createTodo=(newTodo)=>{
-    setTodos([...todos,newTodo]);
+    setTodos([newTodo, ...todos]);
   }
   const removeTodo=(id)=>{
     const yakala=todos.filter((todo)=>todo.id!==id)
